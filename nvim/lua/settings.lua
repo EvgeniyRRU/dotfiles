@@ -3,7 +3,7 @@ HOME = os.getenv("HOME")
 vim.g.python3_host_prog = HOME .. '/.pyenv/shims/python'
 
 vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
+-- vim.g.maplocalleader = '\\'
 
 vim.o.backspace = 2   -- Backspace deletes like most programs in insert mode
 vim.o.backup = false
@@ -63,6 +63,8 @@ au BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 au BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 autocmd Filetype php setlocal ts=4 sts=4 sw=4
+set backspace=2
+set clipboard+=unnamed
 ]])
 
 require('lualine').setup()

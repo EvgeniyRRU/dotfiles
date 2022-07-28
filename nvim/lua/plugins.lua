@@ -74,8 +74,8 @@ return require('packer').startup(function()
   -- lsp
   use 'neovim/nvim-lspconfig'
   use { 'neoclide/coc.nvim', branch = 'release' }
-  use { 'autozimu/LanguageClient-neovim', branch = 'next', run = 'bash install.sh' }
-  use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
+  -- use { 'autozimu/LanguageClient-neovim', branch = 'next', run = 'bash install.sh' }
+  -- use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   -- snippets
