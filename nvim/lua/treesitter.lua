@@ -28,3 +28,8 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+local vim = vim
+local opt = vim.opt
+
+opt.foldexpr = "nvim_treesitter#foldexpr()"

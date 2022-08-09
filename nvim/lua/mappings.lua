@@ -1,8 +1,8 @@
 -- common mappings
 vim.keymap.set('n', '<C-p>', ':GFiles<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader>c', ':Buffers<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<Leader>x', ':Ag', { noremap = true })
-vim.keymap.set('n', '<Leader>z', ':Rg', { noremap = true })
+vim.keymap.set('n', '<Leader>x', ':Ag ', { noremap = true })
+vim.keymap.set('n', '<Leader>z', ':Rg ', { noremap = true })
 vim.keymap.set('n', '<Leader>d', ':Bdelete<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader>t', ':tabclose<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader>T', ':tabnew<CR>', { noremap = true, silent = true })
