@@ -50,7 +50,8 @@ vim.g.localvimrc_sandbox = 0
 
 vim.g.markdown_folding = 1
 vim.g.vim_markdown_folding_disabled = 1
-vim.g.coc_global_extensions = { 'coc-tsserver' }
+vim.g.neoformat_try_node_exe = 1
+-- vim.g.coc_global_extensions = { 'coc-tsserver' }
 
 vim.cmd([[
 " add jbuilder syntax highlighting
@@ -59,12 +60,20 @@ au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.ejs set ft=html
 au BufNewFile,BufRead *.styl set ft=stylus
 
-au BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-au BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
 autocmd Filetype php setlocal ts=4 sts=4 sw=4
 set backspace=2
 set clipboard+=unnamed
 ]])
 
+vim.o.foldcolumn = '1'
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
 require('lualine').setup()
+
+require('ufo').setup({
+    provider_selector = function(bufnr, filetype, buftype)
+        return {'treesitter', 'indent'}
+    end
+})

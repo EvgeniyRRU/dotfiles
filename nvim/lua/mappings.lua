@@ -19,14 +19,12 @@ vim.keymap.set('n', 'n<C-f>', ':NERDTreeFind<CR>', { noremap = true, silent = tr
 vim.keymap.set('n', 'n<C-n>', ':NERDTree<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', 'n<C-t>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
 
--- CoC mappings
-vim.keymap.set('v', '<Leader>p', '<Plug>(coc-format-selected)', { noremap = true })
-vim.keymap.set('n', 'K', ':call CocAction("doHover")<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>gd', '<Plug>(coc-definition)', { silent = true })
-vim.keymap.set('n', '<leader>gy', '<Plug>(coc-type-definition)', { silent = true })
-vim.keymap.set('n', '<leader>gr', '<Plug>(coc-references)', { silent = true })
-vim.keymap.set('n', '<leader>gr', '<Plug>(coc-references)', { silent = true })
-vim.keymap.set('n', '[g', '<Plug>(coc-diagnostic-next)', { silent = true })
-vim.keymap.set('n', ']g', '<Plug>(coc-diagnostic-prev)', { silent = true })
-vim.keymap.set('n', '<Leader>do', '<Plug>(coc-codeaction)', { silent = true })
-vim.keymap.set('n', '<Leader>rn', '<Plug>(coc-rename)', { silent = true })
+vim.keymap.set('n', 'K', ':Lspsaga hover_doc<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-j>', ':Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = true })
+
+vim.keymap.set('v', '<Leader>p', ':Neoformat<CR>', { noremap = true })
+
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)

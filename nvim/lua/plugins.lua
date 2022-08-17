@@ -73,10 +73,19 @@ return require('packer').startup(function()
 
   -- lsp
   use 'neovim/nvim-lspconfig'
-  use { 'neoclide/coc.nvim', branch = 'release' }
-  -- use { 'autozimu/LanguageClient-neovim', branch = 'next', run = 'bash install.sh' }
-  -- use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
+  use { 'glepnir/lspsaga.nvim', branch = 'main' }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+  -- completion
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'quangnguyen30192/cmp-nvim-ultisnips'
+  use 'sbdchd/neoformat'
+
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
   -- snippets
   use 'SirVer/ultisnips'
