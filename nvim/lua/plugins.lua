@@ -37,8 +37,8 @@ return require('packer').startup(function()
   use 'fatih/vim-go'
 
   -- php
-  use 'StanAngeloff/php.vim'
-  use 'phpactor/phpactor'
+  use { 'StanAngeloff/php.vim', ft = 'php' }
+  use { 'phpactor/phpactor', ft = 'php' }
 
   -- js and stuff
   use 'pangloss/vim-javascript'
