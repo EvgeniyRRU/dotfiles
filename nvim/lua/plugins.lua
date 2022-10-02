@@ -82,14 +82,14 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  use 'quangnguyen30192/cmp-nvim-ultisnips'
+  use 'saadparwaiz1/cmp_luasnip'
+
   use 'sbdchd/neoformat'
 
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
   -- snippets
-  use 'SirVer/ultisnips'
-  use 'honza/vim-snippets'
+  use { 'L3MON4D3/LuaSnip', tag = 'v<CurrentMajor>.*' }
 
   -- searching
   use { 'junegunn/fzf', run = './install --bin' }

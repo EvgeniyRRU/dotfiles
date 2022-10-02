@@ -38,13 +38,6 @@ vim.g.syntastic_ruby_checkers = {'rubocop', 'mri'}
 vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeShowBookmarks = 1
 
--- Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-vim.g.UltiSnipsExpandTrigger = '<tab>'
-vim.g.UltiSnipsJumpForwardTrigger = '<c-b>'
-vim.g.UltiSnipsJumpBackwardTrigger = '<c-z>'
--- If you want :UltiSnipsEdit to split your window.
-vim.g.UltiSnipsEditSplit = 'horizontal'
-
 vim.g.localvimrc_ask = 0
 vim.g.localvimrc_sandbox = 0
 
@@ -77,3 +70,6 @@ require('ufo').setup({
         return {'treesitter', 'indent'}
     end
 })
+
+require('luasnip.loaders.from_snipmate').lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load()

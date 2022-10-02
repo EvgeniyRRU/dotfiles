@@ -1,0 +1,139 @@
+# console.log
+snippet cl "console.log"
+  console.log($1);
+
+# context
+snippet t. "this" i
+  this.$1
+
+# arrow function
+snippet => "arrow function" i
+  ($1) => {$2}
+
+# describe in tests
+snippet descr "describe"
+  describe('$1', () => {
+    $2
+  });
+
+# it in tests
+snippet it "it"
+  it('$1', () => {
+    $2
+  });
+
+# beforeEach in tests
+snippet bef "beforeEach"
+  beforeEach(() => {
+    $2
+  });
+
+# afterEach in tests
+snippet aft "afterEach"
+  afterEach(() => {
+    $2
+  });
+
+# export { default }
+snippet edi "export { default }"
+  export { default } from './$1';
+
+# import default
+snippet impd "import Default from "
+  import $2 from '$1';
+
+# import React
+snippet ir "import React"
+  import React from 'react';
+
+# import
+snippet imp "import {} from "
+  import { $2 } from '$1';
+
+# front-core namespace
+snippet fc "@front-core" i
+  @front-core/
+
+# @testing-library/react
+snippet rtl "@testing-library/react" i
+  @testing-library/react
+
+# jest.fn
+snippet jf "jest.fn()" i
+  jest.fn()
+
+# toBeInTheDocument matcher
+snippet tbd "toBeInTheDocument" i
+  .toBeInTheDocument();
+
+# toBeTheNull matcher
+snippet tbn "toBeNull" i
+  .toBeNull();
+
+# toHaveAttribute matcher
+snippet tha "toHaveAttribute" i
+  .toHaveAttribute('$1');
+
+# constant
+snippet con "constant"
+  const $1 = $2;
+
+# let variable declaration
+snippet let "let"
+  let $1 = $2;
+
+# var variable declaration
+snippet var "var"
+  var $1 = $2;
+
+# constant with type annotation
+snippet tcon "typed constant"
+  const $1:{$2:any} = $3;
+
+# let variable declaration with type annotation
+snippet tlet "typed let"
+  let $1:{$2:any} = $3;
+
+# var variable declaration with type annotation
+snippet tvar "var"
+  var $1:{$2:any} = $3;
+
+# desctructive assignment
+snippet con{ "desctructive assignment"
+  const { $2 } = $1;
+
+# desctructive assignment from array
+snippet con[ "desctructive assignment from array"
+  const [$2] = $1;
+
+# export const
+snippet ec "export const"
+  export const $1 = $2;
+
+# document querySelector
+snippet dqs "document.querySelector"
+  document.querySelector('$1')
+
+# document querySelectorAll
+snippet dqsa "document.querySelectorAll"
+  document.querySelectorAll('$1')
+
+# export type
+snippet et "export type"
+  export type $1 = $2;
+
+# import type from graphql
+snippet impgg "import from @generated/graphql"
+  import { $1 } from '@generated/graphql';
+
+#import component
+snippet impc "import component"
+  import $1 from '@components/$1';
+
+# div className
+snippet dcl "<div className={}></div>"
+  <div className={classes.$1}>$2</div>
+
+# class name
+snippet cn "className"
+  className={classes.$0}

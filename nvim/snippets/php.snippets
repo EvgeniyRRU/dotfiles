@@ -1,0 +1,22 @@
+# $this->
+snippet t. "$this in object" i
+  $this->$1
+
+# var_dump()
+snippet vd "var_dump"
+  var_dump($1);
+  die('here');
+
+# author me
+snippet a "author"
+  @author Evgeniy Chernyshev <EvgeniyRRU@gmail.com>
+
+# Yii t wrapper
+snippet yt "Yii t wrapper" i
+  <?= Yii::t('app', '${VISUAL}'); ?>$0
+
+snippet ? "Php tags"
+  <?php $1; ?>
+
+snippet ?= "Php short echo tag" i
+  <?= $1; ?>
