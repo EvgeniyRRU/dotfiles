@@ -1,7 +1,5 @@
 HOME = os.getenv("HOME")
 
-vim.g.python3_host_prog = HOME .. '/.pyenv/shims/python'
-
 vim.g.mapleader = ' '
 -- vim.g.maplocalleader = '\\'
 
@@ -44,7 +42,6 @@ vim.g.localvimrc_sandbox = 0
 vim.g.markdown_folding = 1
 vim.g.vim_markdown_folding_disabled = 1
 vim.g.neoformat_try_node_exe = 1
--- vim.g.coc_global_extensions = { 'coc-tsserver' }
 
 vim.cmd([[
 " add jbuilder syntax highlighting
@@ -70,6 +67,3 @@ require('ufo').setup({
         return {'treesitter', 'indent'}
     end
 })
-
-require('luasnip.loaders.from_snipmate').lazy_load()
-require('luasnip.loaders.from_vscode').lazy_load()

@@ -89,7 +89,10 @@ return require('packer').startup(function()
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
   -- snippets
-  use { 'L3MON4D3/LuaSnip', tag = 'v<CurrentMajor>.*' }
+  use { 'L3MON4D3/LuaSnip',
+        tag = 'v<CurrentMajor>.*',
+        config = require('snips').setup()
+      }
 
   -- searching
   use { 'junegunn/fzf', run = './install --bin' }
