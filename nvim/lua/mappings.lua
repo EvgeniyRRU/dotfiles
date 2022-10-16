@@ -16,10 +16,10 @@ nnoremap <silent><leader>X :Ag <C-R>=expand("<cword>")<CR><CR>
 ]])
 
 -- NERDTree mappings
-map('n', 'n<C-d>', ':NERDTreeClose<CR>', { silent = true })
-map('n', 'n<C-f>', ':NERDTreeFind<CR>', { silent = true })
-map('n', 'n<C-n>', ':NERDTree<CR>', { silent = true })
-map('n', 'n<C-t>', ':NERDTreeToggle<CR>', { silent = true })
+map('n', 'n<C-d>', ':NvimTreeClose<CR>', { silent = true })
+map('n', 'n<C-f>', ':NvimTreeFindFile<CR>', { silent = true })
+map('n', 'n<C-n>', ':NvimTreeOpen<CR>', { silent = true })
+map('n', 'n<C-t>', ':NvimTreeToggle<CR>', { silent = true })
 
 map('n', 'K', ':Lspsaga hover_doc<CR>', { silent = true })
 map('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', { silent = true })

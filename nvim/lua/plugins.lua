@@ -3,7 +3,6 @@ return require('packer').startup(function()
 
   -- common
   use 'junegunn/vim-easy-align' -- align text plugin
-  use 'scrooloose/nerdtree' -- files browser
   use 'tpope/vim-surround' -- awesome plugin for text quoting
   use 'tpope/vim-commentary' -- commenting plugin
   use 'tpope/vim-abolish' -- awesome substitution plugin
@@ -20,6 +19,11 @@ return require('packer').startup(function()
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config =  require('nvtree').setup()
   }
 
   -- git

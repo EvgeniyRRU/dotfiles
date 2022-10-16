@@ -33,8 +33,8 @@ vim.cmd 'colorscheme gruvbox'
 vim.g.ayucolor = 'dark'
 
 vim.g.syntastic_ruby_checkers = {'rubocop', 'mri'}
-vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeShowBookmarks = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.g.localvimrc_ask = 0
 vim.g.localvimrc_sandbox = 0
