@@ -41,10 +41,6 @@ return require('packer').startup(function()
   use { 'phpactor/phpactor', ft = 'php' }
 
   -- js and stuff
-  use 'pangloss/vim-javascript'
-  use 'leafgarland/typescript-vim'
-  use 'peitalin/vim-jsx-typescript'
-  use 'MaxMEllon/vim-jsx-pretty'
   use 'pantharshit00/vim-prisma'
   use 'posva/vim-vue'
   use 'jparise/vim-graphql'
