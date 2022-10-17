@@ -54,7 +54,7 @@ function M.setup()
   ls.filetype_extend("all", { "_" })
   ls.filetype_extend("javascriptreact", { "javascript" })
   ls.filetype_extend("typescript", { "javascript" })
-  ls.filetype_extend("typescriptreact", { "javascript", "javascriptreact" })
+  ls.filetype_extend("typescriptreact", { "javascript", "javascriptreact", "typescript" })
 end
 
 return M

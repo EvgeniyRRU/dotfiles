@@ -10,5 +10,9 @@ return {
   ),
   s({ trig = 'et', name = 'export type' },
     fmt('export type {} = {};', { i(1), i(2) })
-  )
+  ),
+  s({ trig = 'impgg', name = 'import type from generated' },
+    fmt("import {{ {} }} from '@generated/graphql';", i(1))
+  ),
+  s({ trig = 'jm', name = 'jest.Mock' }, t('as jest.Mock;')),
 }
