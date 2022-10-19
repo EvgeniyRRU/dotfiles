@@ -25,7 +25,7 @@ return {
   s({ trig = 'itr', name = 'itr', dscr = 'renders component'},
     fmt([[
       it('renders component', () => {{
-        {}
+        render({});
       }});
     ]], i(1))
   ),
