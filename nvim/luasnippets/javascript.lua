@@ -18,6 +18,7 @@ return {
   s({ trig = 'ec', name = 'export const' },
     fmt('export const {} = {};', { i(1), i(2) })
   ),
+  s({ trig = 'ed', name = 'export default' }, t('export default ')),
   s({ trig = 'let', name = 'let assignment' },
     fmt('let {} = {};', { i(1), i(2) })
   ),
@@ -104,5 +105,8 @@ return {
   s({ trig = 'fc', name = '@front-core' }, t('@front-core/')),
   s({ trig = 'fct', name = '@front-core/typography' },
     t('@front-core/typography')
+  ),
+  s({ trig = 'ex', name = 'expect jest' },
+    fmt('expect({})', i(1))
   ),
 }
