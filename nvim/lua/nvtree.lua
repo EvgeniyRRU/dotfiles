@@ -7,8 +7,8 @@ function M.setup()
     view = {
       adaptive_size = true,
       width = 50,
-      number = false,
-      relativenumber = false,
+      number = true,
+      relativenumber = true,
       signcolumn = "yes",
     },
     renderer = {

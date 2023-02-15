@@ -15,4 +15,5 @@ return {
     fmt("import {{ {} }} from '@generated/graphql';", i(1))
   ),
   s({ trig = 'jm', name = 'jest.Mock' }, t('as jest.Mock;')),
+  s({ trig = 'tsi', name = 'ts-ignore' }, t('// @ts-ignore')),
 }

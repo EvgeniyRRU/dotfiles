@@ -21,11 +21,6 @@ map('n', 'n<C-f>', ':NvimTreeFindFile<CR>', { silent = true })
 map('n', 'n<C-n>', ':NvimTreeOpen<CR>', { silent = true })
 map('n', 'n<C-t>', ':NvimTreeToggle<CR>', { silent = true })
 
-map('n', 'K', ':Lspsaga hover_doc<CR>', { silent = true })
-map('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', { silent = true })
-map('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', { silent = true })
-map('n', '<C-j>', ':Lspsaga diagnostic_jump_next<CR>', { silent = true })
-
 map('v', '<Leader>p', ':Neoformat<CR>')
 
 map('n', 'zR', require('ufo').openAllFolds)
@@ -48,3 +43,5 @@ smap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 imap <silent><expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-p>'
 smap <silent><expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-p>'
 ]])
+
+vim.g.doge_mapping = '<Leader>j'

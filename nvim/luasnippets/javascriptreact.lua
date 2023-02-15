@@ -2,6 +2,10 @@ local function copy(args)
   return args[1]
 end
 
+local function get_component_name(_, parent)
+  return string.gsub(parent.env.TM_FILENAME, '.test.tsx', '') or '';
+end
+
 return {
   s({ trig = 'ir', name = 'import react'}, t("import React from 'react';")),
   s({ trig = 'impc', name = 'import component' },
@@ -25,8 +29,8 @@ return {
   s({ trig = 'itr', name = 'itr', dscr = 'renders component'},
     fmt([[
       it('renders component', () => {{
-        render({});
+        render(<{component_name} {here}/>);
       }});
-    ]], i(1))
+    ]], { component_name = f(get_component_name), here = i(1) })
   ),
 }

@@ -16,19 +16,23 @@ return require('packer').startup(function()
   use 'majutsushi/tagbar' -- ctags on right panel
   use 'rhysd/vim-grammarous' -- grammar checker
   use 'andymass/vim-matchup' -- matching parens and more
+  use 'nvim-tree/nvim-web-devicons'
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use {
     'nvim-tree/nvim-tree.lua',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config =  require('nvtree').setup()
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config =  require('nvtree').setup(),
   }
 
   -- git
   use 'tpope/vim-fugitive' -- main git plugin
-  use 'airblade/vim-gitgutter' -- diff in sign column
+  use 'lewis6991/gitsigns.nvim' -- diff in sign column
+  use { 'sindrets/diffview.nvim',
+    requires = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' }
+  }
 
   -- ruby
   use { 'vim-ruby/vim-ruby', ft = 'ruby' }
@@ -66,7 +70,6 @@ return require('packer').startup(function()
 
   -- devops
   use 'martinda/Jenkinsfile-vim-syntax'
-  use 'chr4/nginx.vim'
 
   -- appearance
   use 'arcticicestudio/nord-vim'
@@ -77,7 +80,10 @@ return require('packer').startup(function()
 
   -- lsp
   use 'neovim/nvim-lspconfig'
-  use { 'glepnir/lspsaga.nvim', branch = 'main' }
+  use {
+        'glepnir/lspsaga.nvim', branch = 'main',
+        requires = { 'nvim-tree/nvim-web-devicons' }
+      }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   -- completion
@@ -89,6 +95,7 @@ return require('packer').startup(function()
   use 'saadparwaiz1/cmp_luasnip'
 
   use 'sbdchd/neoformat'
+  use { 'kkoomen/vim-doge', run = ':call doge#install()' }
 
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
