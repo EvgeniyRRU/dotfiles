@@ -42,6 +42,7 @@ vim.g.localvimrc_sandbox = 0
 vim.g.markdown_folding = 1
 vim.g.vim_markdown_folding_disabled = 1
 vim.g.neoformat_try_node_exe = 1
+vim.g.camelcasemotion_key = '<leader>'
 
 vim.cmd([[
 " add jbuilder syntax highlighting

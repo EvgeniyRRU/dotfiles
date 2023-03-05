@@ -107,7 +107,10 @@ return {
     t('.toBeInTheDocument();')
   ),
   s({ trig = 'tha', name = 'to have attribute matcher' },
-    fmt('.toHaveAttribute({})', i(1))
+    fmt('.toHaveAttribute({});', i(1))
+  ),
+  s({ trig = 'thl', name = 'to have length matcher' },
+    fmt('.toHaveLength({});', i(1))
   ),
   s({ trig = 'fc', name = '@front-core' }, t('@front-core/')),
   s({ trig = 'fct', name = '@front-core/typography' },
@@ -116,4 +119,13 @@ return {
   s({ trig = 'ex', name = 'expect jest' },
     fmt('expect({})', i(1))
   ),
+  s({ trig = 'try', name = 'try-catch block' },
+    fmt([[
+      try {{
+        {}
+      }} catch (err) {{
+        {}
+      }}
+    ]], { i(1), i(2) })
+  )
 }

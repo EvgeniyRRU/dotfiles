@@ -10,6 +10,7 @@ return require('packer').startup(function()
   use 'tpope/vim-obsession' -- tracking vim session for restore
   use 'myusuf3/numbers.vim' -- handy show relativ numbers
   use 'easymotion/vim-easymotion' -- awesome jumping in window
+  use 'bkad/CamelCaseMotion' -- jumping in word
   use 'moll/vim-bbye' -- close window after close buffer
   use 'embear/vim-localvimrc' -- local config for folder
   use 'kshenoy/vim-signature' -- show labels in sign columns
@@ -81,8 +82,9 @@ return require('packer').startup(function()
   -- lsp
   use 'neovim/nvim-lspconfig'
   use {
-        'glepnir/lspsaga.nvim', branch = 'main',
-        requires = { 'nvim-tree/nvim-web-devicons' }
+        'glepnir/lspsaga.nvim',
+        branch = 'main',
+        requires = { 'nvim-tree/nvim-web-devicons', 'nvim-treesitter/nvim-treesitter' }
       }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 

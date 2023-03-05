@@ -16,4 +16,13 @@ return {
   ),
   s({ trig = 'jm', name = 'jest.Mock' }, t('as jest.Mock;')),
   s({ trig = 'tsi', name = 'ts-ignore' }, t('// @ts-ignore')),
+  s({ trig = 'tstry', name = 'try-catch block' },
+    fmt([[
+      try {{
+        {}
+      }} catch (err: {}) {{
+        {}
+      }}
+    ]], { i(1), i(2, 'unknown'), i(3) })
+  )
 }
