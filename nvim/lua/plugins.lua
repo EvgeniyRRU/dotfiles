@@ -60,6 +60,7 @@ return require('packer').startup(function()
   use 'reasonml-editor/vim-reason-plus'
   use 'rescript-lang/vim-rescript'
   use 'elm-tooling/elm-vim'
+  use 'windwp/nvim-ts-autotag'
 
   -- markup languages
   use 'digitaltoad/vim-jade'
@@ -78,12 +79,16 @@ return require('packer').startup(function()
   use 'joshdick/onedark.vim'
   use 'sainnhe/sonokai'
   use 'morhetz/gruvbox'
+  use 'folke/tokyonight.nvim'
+  use { 'catppuccin/nvim', as = 'catppuccin' }
+  use 'marko-cerovac/material.nvim'
 
   -- lsp
   use 'neovim/nvim-lspconfig'
   use {
         'glepnir/lspsaga.nvim',
-        branch = 'main',
+        -- branch = 'main',
+        commit = 'd73a826b05f76da72866ebf601464da2686fd122',
         requires = { 'nvim-tree/nvim-web-devicons', 'nvim-treesitter/nvim-treesitter' }
       }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
