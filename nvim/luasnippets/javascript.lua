@@ -18,6 +18,13 @@ return {
   s({ trig = 'ec', name = 'export const' },
     fmt('export const {} = {};', { i(1), i(2) })
   ),
+  s({ trig = 'ecl', name = 'export class' },
+    fmt([[
+      export class {} {{
+        {}
+      }}
+    ]], { i(1), i(2) })
+  ),
   s({ trig = 'ed', name = 'export default' }, t('export default ')),
   s({ trig = 'let', name = 'let assignment' },
     fmt('let {} = {};', { i(1), i(2) })
