@@ -1,7 +1,3 @@
-local saga = require 'lspsaga'
-
-saga.setup({})
-
 local keymap = vim.keymap.set
 -- Lsp finder find the symbol definition implement reference
 -- if there is no implement it will hide

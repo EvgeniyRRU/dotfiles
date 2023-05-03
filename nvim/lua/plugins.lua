@@ -87,8 +87,12 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use {
         'glepnir/lspsaga.nvim',
-        -- branch = 'main',
-        commit = 'd73a826b05f76da72866ebf601464da2686fd122',
+        -- opt = true,
+        branch = 'main',
+        event = 'LspAttach',
+        config = function()
+            require('lspsaga').setup({})
+        end,
         requires = { 'nvim-tree/nvim-web-devicons', 'nvim-treesitter/nvim-treesitter' }
       }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }

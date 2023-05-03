@@ -6,10 +6,7 @@ local on_attach = function(client, bufnr)
 end
 
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
+local lsp_flags = {}
 
 nvim_lsp.pyright.setup{
     on_attach = on_attach,
