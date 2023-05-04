@@ -60,7 +60,6 @@ return require('packer').startup(function()
   use 'reasonml-editor/vim-reason-plus'
   use 'rescript-lang/vim-rescript'
   use 'elm-tooling/elm-vim'
-  use 'windwp/nvim-ts-autotag'
 
   -- markup languages
   use 'digitaltoad/vim-jade'
@@ -95,7 +94,10 @@ return require('packer').startup(function()
         end,
         requires = { 'nvim-tree/nvim-web-devicons', 'nvim-treesitter/nvim-treesitter' }
       }
+
+  -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'windwp/nvim-ts-autotag'
 
   -- completion
   use 'hrsh7th/cmp-nvim-lsp'
