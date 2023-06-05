@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/evgeniyrru/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -23,14 +23,13 @@ ZSH_THEME="agnoster"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -45,8 +44,9 @@ ZSH_THEME="agnoster"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -70,10 +70,18 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler docker-compose docker)
+plugins=(git bundler docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
+# Homebrew
+export PATH="/opt/homebrew/sbin:$PATH"
 
+# openssl
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/opt/homebrew/opt/openssl@1.1"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -87,19 +95,36 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR="/opt/homebrew/bin/nvim"
+export PSQL_EDITOR="/opt/homebrew/bin/nvim"
 
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-export EDITOR="/usr/local/bin/nvim"
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
 
-eval "$(rbenv init -)"
+export RUBY_CFLAGS="-w"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+# export PATH="$PYENV_ROOT/shims:$PATH"
+# eval "$(pyenv init -)"
 
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
-
-# export JAVA_HOME=`/usr/libexec/java_home -d 64 -v "1.8*"`
 
 export LDFLAGS="-L/usr/local/opt/readline/lib:$LDFLAGS"
 export CPPFLAGS="-I/usr/local/opt/readline/include:$CPPFLAGS"
@@ -108,9 +133,6 @@ alias glt="git describe --abbrev=0"
 alias gtlog="git log --decorate --date=short"
 
 alias cdw="cd ~/work"
-alias cdll="cd ~/work/LimEnglish"
-alias cdla="cd ~/work/Lim_English_new_API"
-alias cdlr="cd ~/work/Lim-English-React"
 
 myfickingip() {
   echo $(curl ifconfig.me) 2>&1
@@ -135,20 +157,21 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(nvim {})+abort'"
 
 export PATH="$HOME/bin:$PATH"
-export PATH="/Applications/Postgres.app/Contents/Versions/11/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/14/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+# docker() {
+#  if [[ `uname -m` == "arm64" ]] && [[ "$1" == "run" || "$1" == "build" ]]; then
+#     /usr/local/bin/docker "$1" --platform linux/amd64 "${@:2}"
+#   else
+#      /usr/local/bin/docker "$@"
+#   fi
+# }
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 export LC_ALL=en_US.UTF-8
 export LC_MESSAGES=en_US.UTF-8
-
-export THOR_MERGE="nvim -d $1 $2"
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -159,3 +182,7 @@ export THOR_MERGE="nvim -d $1 $2"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
+
+source /Users/emchernyshev/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+[ -f "/Users/emchernyshev/.ghcup/env" ] && source "/Users/emchernyshev/.ghcup/env" # ghcup-env
