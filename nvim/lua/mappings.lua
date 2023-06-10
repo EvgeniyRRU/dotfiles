@@ -1,19 +1,12 @@
 local map = require('utils').map
 
 -- common mappings
-map('n', '<C-p>', ':GFiles<CR>', { silent = true })
-map('n', '<Leader>c', ':Buffers<CR>', { silent = true })
-map('n', '<Leader>x', ':Ag ')
-map('n', '<Leader>z', ':Rg ')
 map('n', '<Leader>d', ':Bdelete<CR>', { silent = true })
 map('n', '<Leader>t', ':tabclose<CR>', { silent = true })
 map('n', '<Leader>T', ':tabnew<CR>', { silent = true })
 map('v', '//', 'y/<C-R>"<CR>')
 map('n', '<F8>', ':TagbarToggle<CR>', { silent = true })
 map('t', '<Esc>', '<C-\\><C-n>', { silent = true })
-vim.cmd([[
-nnoremap <silent><leader>X :Ag <C-R>=expand("<cword>")<CR><CR>
-]])
 
 -- NERDTree mappings
 map('n', 'n<C-d>', ':NvimTreeClose<CR>', { silent = true })

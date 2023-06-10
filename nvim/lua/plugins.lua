@@ -82,6 +82,9 @@ return require('packer').startup(function()
   use { 'catppuccin/nvim', as = 'catppuccin' }
   use 'marko-cerovac/material.nvim'
 
+  -- add background colors to colors value
+  use 'norcalli/nvim-colorizer.lua'
+
   -- lsp
   use 'neovim/nvim-lspconfig'
   use {
@@ -106,6 +109,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use 'saadparwaiz1/cmp_luasnip'
+  use 'onsails/lspkind.nvim'
 
   use 'sbdchd/neoformat'
   use { 'kkoomen/vim-doge', run = ':call doge#install()' }
@@ -119,6 +123,6 @@ return require('packer').startup(function()
       }
 
   -- searching
-  use { 'junegunn/fzf', run = './install --bin' }
-  use 'junegunn/fzf.vim'
+  use { 'nvim-telescope/telescope.nvim', tag =  '0.1.0' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 end)

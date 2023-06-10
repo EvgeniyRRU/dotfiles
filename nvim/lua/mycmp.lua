@@ -3,6 +3,7 @@ vim.cmd([[
 set completeopt=menu,menuone,noselect
 ]])
 local cmp = require'cmp'
+local lspkind = require('lspkind')
 
 cmp.setup({
   snippet = {
@@ -39,7 +40,10 @@ cmp.setup({
         end
       }
     }
-  })
+  }),
+  formatting = {
+    format = lspkind.cmp_format({})
+  }
 })
 
 -- Set configuration for specific filetype.

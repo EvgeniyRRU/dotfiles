@@ -64,6 +64,7 @@ vim.o.foldenable = true
 
 require('lualine').setup()
 require('nvim-ts-autotag').setup()
+require('colorizer').setup()
 
 require('ufo').setup({
     provider_selector = function(bufnr, filetype, buftype)
