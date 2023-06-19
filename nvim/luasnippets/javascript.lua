@@ -94,6 +94,13 @@ return {
       }});
     ]], { i(1), i(2) })
   ),
+  s({ trig = 'ita', name = 'it async jest block' },
+    fmt([[
+      it('{}', async () => {{
+        {}
+      }});
+    ]], { i(1), i(2) })
+  ),
   s({ trig = 'bef', name = 'beforeEach jest block' },
     fmt([[
       beforeEach(() => {{
