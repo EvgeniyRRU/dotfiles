@@ -88,10 +88,8 @@ return require('packer').startup(function()
   -- lsp
   use 'neovim/nvim-lspconfig'
   use {
-        'glepnir/lspsaga.nvim',
-        -- opt = true,
-        branch = 'main',
-        event = 'LspAttach',
+        'nvimdev/lspsaga.nvim',
+        after = 'nvim-lspconfig',
         config = function()
             require('lspsaga').setup({})
         end,
