@@ -5,7 +5,6 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 
-
 local lsp_flags = {}
 
 nvim_lsp.pyright.setup{
@@ -15,6 +14,15 @@ nvim_lsp.pyright.setup{
 nvim_lsp.tsserver.setup{
     on_attach = on_attach,
     flags = lsp_flags,
+}
+nvim_lsp.stylelint_lsp.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    filetypes = {
+      'css',
+      'less',
+      'scss',
+    }
 }
 nvim_lsp.rust_analyzer.setup{
     on_attach = on_attach,

@@ -19,6 +19,13 @@ return {
   s({ trig = 'cn', name = 'className' },
     fmt('className={{classes.{}}}', i(1))
   ),
+  s({ trig = 'use', name = 'react hook'},
+    fmt([[
+      use{}(({}) => {{
+        {}
+      }}, [{}]);
+    ]], { i(1), i(2), i(3), i(4) })
+  ),
   s({ trig = 'dcl', name = 'div className' },
     fmt(
       '<div className={classes.()}>()</div>',

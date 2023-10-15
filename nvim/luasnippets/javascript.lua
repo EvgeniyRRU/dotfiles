@@ -48,13 +48,6 @@ return {
       }}
     ]], { i(1), i(2) })
   ),
-  s({ trig = 'use', name = 'react hook'},
-    fmt([[
-      use{}(({}) => {{
-        {}
-      }}, [{}])
-    ]], { i(1), i(2), i(3), i(4) })
-  ),
   s({ trig = 'ifr', name = 'if single line return' },
     fmt('if ({}) return;', i(1))
   ),

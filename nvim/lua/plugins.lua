@@ -108,7 +108,10 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use 'saadparwaiz1/cmp_luasnip'
   use 'onsails/lspkind.nvim'
-
+  use {
+    'windwp/nvim-autopairs',
+      config = function() require('nvim-autopairs').setup {} end
+  }
   use 'sbdchd/neoformat'
   use { 'kkoomen/vim-doge', run = ':call doge#install()' }
 
@@ -116,7 +119,7 @@ return require('packer').startup(function()
 
   -- snippets
   use { 'L3MON4D3/LuaSnip',
-        tag = 'v<CurrentMajor>.*',
+        tag = 'v2.*',
         config = require('snips').setup()
       }
 
