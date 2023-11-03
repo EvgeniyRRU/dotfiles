@@ -124,6 +124,6 @@ return require('packer').startup(function()
       }
 
   -- searching
-  use { 'nvim-telescope/telescope.nvim', tag =  '0.1.0' }
+  use { 'nvim-telescope/telescope.nvim', tag =  '0.1.4' }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 end)

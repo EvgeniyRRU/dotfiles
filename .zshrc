@@ -185,4 +185,6 @@ export LC_MESSAGES=en_US.UTF-8
 
 source /Users/emchernyshev/.docker/init-zsh.sh || true # Added by Docker Desktop
 
+eval "$(starship init zsh)"
+
 [ -f "/Users/emchernyshev/.ghcup/env" ] && source "/Users/emchernyshev/.ghcup/env" # ghcup-env
