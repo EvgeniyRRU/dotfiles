@@ -85,6 +85,9 @@ return require('packer').startup(function()
   -- add background colors to colors value
   use 'norcalli/nvim-colorizer.lua'
 
+  -- find and replace stuff
+  use 'nvim-pack/nvim-spectre'
+
   -- lsp
   use 'neovim/nvim-lspconfig'
   use {

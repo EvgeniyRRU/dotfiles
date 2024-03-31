@@ -19,6 +19,26 @@ map('v', '<Leader>p', ':Neoformat<CR>')
 map('n', 'zR', require('ufo').openAllFolds)
 map('n', 'zM', require('ufo').closeAllFolds)
 
+-- leader xp -> paste registry to system clipboard
+map("n", "<Leader>xp", ":call setreg('+', getreg('@'))<CR>", opts)
+-- leader xc -> copy current path + line number to system clipboard
+map("n", "<Leader>xc", ":call setreg('+', expand('%:.') .. ':' .. line('.'))<CR>", opts)
+-- open tmux pane with path of current file:
+map("n", "<leader>tm", ":let $VIM_DIR=expand('%:p:h')<CR>:silent !tmux split-window -hc $VIM_DIR<CR>", nosilent)
+
+map('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
+    desc = "Toggle Spectre"
+})
+map('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+    desc = "Search current word"
+})
+map('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+    desc = "Search current word"
+})
+map('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+    desc = "Search on current file"
+})
+
 vim.cmd([[
 " press <Tab> to expand or jump in a snippet. These can also be mapped separately
 " via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
