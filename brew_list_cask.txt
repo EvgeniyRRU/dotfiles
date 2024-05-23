@@ -1,0 +1,6 @@
+chromedriver
+font-fira-code
+keepassxc
+kitty
+responsively
+wezterm

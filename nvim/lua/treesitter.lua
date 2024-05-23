@@ -31,9 +31,6 @@ require'nvim-treesitter.configs'.setup {
     enable = false,
     disable = {},
   },
-  autotag = {
-    enable = true,
-  },
   ensure_installed = {
     "tsx",
     "ruby",

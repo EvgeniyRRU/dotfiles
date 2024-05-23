@@ -3,7 +3,6 @@ HOME = os.getenv("HOME")
 vim.g.mapleader = ' '
 -- vim.g.maplocalleader = '\\'
 
-vim.o.backspace = 2   -- Backspace deletes like most programs in insert mode
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.swapfile = false    -- http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
