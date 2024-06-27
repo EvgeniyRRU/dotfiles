@@ -95,8 +95,8 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/opt/homebrew/opt/openssl@1.1"
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR="/opt/homebrew/bin/nvim --noplugin"
-export PSQL_EDITOR="/opt/homebrew/bin/nvim --noplugin"
+export EDITOR="/opt/homebrew/bin/nvim"
+export PSQL_EDITOR="/opt/homebrew/bin/nvim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

@@ -28,9 +28,6 @@ vim.o.termguicolors = true
 
 vim.o.numberwidth = 5
 vim.o.termguicolors = true
-vim.cmd 'colorscheme material'
-vim.g.ayucolor = 'dark'
-vim.g.material_style = 'deep ocean'
 
 vim.g.syntastic_ruby_checkers = {'rubocop', 'mri'}
 vim.g.loaded_netrw = 1
@@ -60,13 +57,3 @@ vim.o.foldcolumn = '1'
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
-
-require('lualine').setup()
-require('nvim-ts-autotag').setup()
-require('colorizer').setup()
-
-require('ufo').setup({
-    provider_selector = function(bufnr, filetype, buftype)
-        return {'treesitter', 'indent'}
-    end
-})
