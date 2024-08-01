@@ -24,6 +24,10 @@ nvim_lsp.stylelint_lsp.setup{
       'scss',
     }
 }
+nvim_lsp.ruby_lsp.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
 nvim_lsp.rust_analyzer.setup{
     on_attach = on_attach,
     flags = lsp_flags,

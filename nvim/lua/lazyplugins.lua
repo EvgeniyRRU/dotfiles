@@ -1,4 +1,4 @@
-local gitsigns_config = require('plugins.gitsigns')
+local gitsigns_config = require("plugins.gitsigns")
 
 return {
   -- common plugins
@@ -41,7 +41,7 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { { "nvim-tree/nvim-web-devicons", lazy = true } },
     config = function()
-      require('lualine').setup()
+      require("lualine").setup()
     end
   },
   {
@@ -127,7 +127,7 @@ return {
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
-      require('colorizer').setup()
+      require("colorizer").setup()
     end
   },
 
@@ -135,7 +135,9 @@ return {
   {
     "nvim-pack/nvim-spectre",
     config = function()
-      require('spectre').setup()
+      require("spectre").setup({
+        use_trouble_qf = true
+      })
     end,
     event = "VeryLazy"
   },
@@ -154,12 +156,20 @@ return {
     }
   },
 
+  -- extended quickfix
+  {
+    "folke/trouble.nvim",
+    opts = require("plugins.trouble")["opts"],
+    cmd = "Trouble",
+    keys = require("plugins.trouble")["keys"],
+  },
+
   -- treesitter
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   {
     "windwp/nvim-ts-autotag",
     config = function()
-      require('nvim-ts-autotag').setup()
+      require("nvim-ts-autotag").setup()
     end
   },
 
@@ -191,21 +201,21 @@ return {
   -- folding plugin
   {
     "kevinhwang91/nvim-ufo",
-    dependencies = { 'kevinhwang91/promise-async' },
+    dependencies = { "kevinhwang91/promise-async" },
     config = function()
-      require('ufo').setup({
+      require("ufo").setup({
         provider_selector = function(bufnr, filetype, buftype)
-        return {'treesitter', 'indent'}
+        return {"treesitter", "indent"}
         end
       })
     end
   },
 
   -- snippets
-  { 'L3MON4D3/LuaSnip',
-    version = 'v2.*',
+  { "L3MON4D3/LuaSnip",
+    version = "v2.*",
     config = function()
-      require('snips').setup()
+      require("plugins.luasnips").setup()
     end
   },
 

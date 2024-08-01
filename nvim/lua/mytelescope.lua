@@ -1,8 +1,12 @@
-local map = require('utils').map
-local builtin = require('telescope.builtin')
-local actions = require('telescope.actions')
+local map = require("utils").map
+local builtin = require("telescope.builtin")
+local actions = require("telescope.actions")
+local open_with_trouble = require("trouble.sources.telescope").open
 
-require('telescope').setup{
+-- Use this to add more results without clearing the trouble list
+local add_to_trouble = require("trouble.sources.telescope").add
+
+require("telescope").setup{
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
@@ -12,7 +16,9 @@ require('telescope').setup{
         -- actions.which_key shows the mappings for your picker,
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
         ["<C-o>"] = actions.send_selected_to_qflist + actions.open_qflist,
-      }
+        ["<c-t>"] = open_with_trouble,
+      },
+      n = { ["<c-t>"] = open_with_trouble }
     }
   },
   pickers = {
@@ -33,9 +39,9 @@ require('telescope').setup{
   }
 }
 
-map('n', '<leader>fa', builtin.find_files, {})
-map('n', '<leader>ff', builtin.git_files, {})
-map('n', '<leader>fg', builtin.live_grep, {})
-map('n', '<leader>fb', builtin.buffers, {})
-map('n', '<leader>fh', builtin.help_tags, {})
-map('n', '<leader>fc', builtin.colorscheme, {})
+map("n", "<leader>fa", builtin.find_files, {})
+map("n", "<leader>ff", builtin.git_files, {})
+map("n", "<leader>fg", builtin.live_grep, {})
+map("n", "<leader>fb", builtin.buffers, {})
+map("n", "<leader>fh", builtin.help_tags, {})
+map("n", "<leader>fc", builtin.colorscheme, {})
