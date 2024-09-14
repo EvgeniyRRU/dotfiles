@@ -11,7 +11,7 @@ nvim_lsp.pyright.setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
-nvim_lsp.tsserver.setup{
+nvim_lsp.ts_ls.setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
