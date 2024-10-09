@@ -32,8 +32,6 @@ return {
   { "kshenoy/vim-signature" },
   -- ctags on right panel
   { "majutsushi/tagbar" },
-  -- grammar checker
-  { "rhysd/vim-grammarous" },
   -- matching parens and more
   { "andymass/vim-matchup" },
   -- file browser
@@ -193,7 +191,12 @@ return {
   },
 
   -- code formatter
-  { "sbdchd/neoformat" },
+  {
+    "mhartington/formatter.nvim",
+    config = function()
+      require("formatter").setup(require("plugins.formatter"))
+    end
+  },
 
   -- generate jsdoc
   { "kkoomen/vim-doge", build = ":call doge#install()" },

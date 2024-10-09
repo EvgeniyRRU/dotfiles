@@ -14,7 +14,7 @@ map('n', 'n<C-f>', ':NvimTreeFindFile<CR>', { silent = true })
 map('n', 'n<C-n>', ':NvimTreeOpen<CR>', { silent = true })
 map('n', 'n<C-t>', ':NvimTreeToggle<CR>', { silent = true })
 
-map('v', '<Leader>p', ':Neoformat<CR>')
+map('n', '<Leader>P', ':FormatWrite<CR>')
 
 map('n', 'zR', require('ufo').openAllFolds)
 map('n', 'zM', require('ufo').closeAllFolds)
