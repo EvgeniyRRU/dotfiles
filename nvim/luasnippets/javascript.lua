@@ -109,6 +109,15 @@ return {
     ]], i(1))
   ),
   s({ trig = 'rtl', name = '@testing-library/react'}, t('@testing-library/react')),
+  s({ trig = 'qbtx', name = 'queryByText selector'},
+    fmt([[queryByText('{}')]], i(1))
+  ),
+  s({ trig = 'qbti', name = 'queryByTestId selector'},
+    fmt([[queryByTestId('{}')]], i(1))
+  ),
+  s({ trig = 'qbr', name = 'queryByRole selector'},
+    fmt([[queryByRole('{}')]], i(1))
+  ),
   s({ trig = 'tbn', name = 'to be null matcher'}, t('.toBeNull();')),
   s({ trig = 'tbd', name = 'to be in the document matcher'},
     t('.toBeInTheDocument();')
@@ -118,6 +127,9 @@ return {
   ),
   s({ trig = 'thl', name = 'to have length matcher' },
     fmt('.toHaveLength({});', i(1))
+  ),
+  s({ trig = 'mrv', name = 'mock return value'},
+    fmt('mockReturnValue({});', i(1))
   ),
   s({ trig = 'fc', name = '@front-core' }, t('@front-core/')),
   s({ trig = 'fct', name = '@front-core/typography' },
