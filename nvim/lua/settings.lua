@@ -22,7 +22,7 @@ vim.o.list = true
 vim.o.listchars = 'tab:»·,trail:·,nbsp:·' -- Display extra whitespace
 vim.o.joinspaces = false
 
-vim.o.spellfile = HOME .. '/.config/nvim/spell/en.utf-8.add'
+vim.o.spelllang="en_us,ru"
 
 vim.o.termguicolors = true
 
@@ -33,8 +33,6 @@ vim.o.termguicolors = true
 -- vim.g.material_style = 'deep ocean'
 
 vim.g.syntastic_ruby_checkers = {'rubocop', 'mri'}
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
 vim.g.localvimrc_ask = 0
 vim.g.localvimrc_sandbox = 0

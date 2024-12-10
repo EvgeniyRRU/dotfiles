@@ -108,6 +108,8 @@ return {
   { "sainnhe/sonokai" },
   { "morhetz/gruvbox" },
   { "folke/tokyonight.nvim" },
+  { "sainnhe/edge" },
+  { "sainnhe/everforest" },
   { "catppuccin/nvim", name = "catppuccin" },
   {
     "marko-cerovac/material.nvim",
@@ -200,6 +202,13 @@ return {
 
   -- generate jsdoc
   { "kkoomen/vim-doge", build = ":call doge#install()" },
+
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = require("plugins.whichkey")["opts"],
+    keys = require("plugins.whichkey")["keys"]
+  },
 
   -- folding plugin
   {

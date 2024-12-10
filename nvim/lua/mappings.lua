@@ -6,6 +6,7 @@ map('n', '<Leader>t', ':tabclose<CR>', { silent = true })
 map('n', '<Leader>T', ':tabnew<CR>', { silent = true })
 map('v', '//', 'y/<C-R>"<CR>')
 map('n', '<F8>', ':TagbarToggle<CR>', { silent = true })
+map('n', '<F9>', ':set spell!<CR>', { silent = true })
 map('t', '<Esc>', '<C-\\><C-n>', { silent = true })
 
 -- NERDTree mappings

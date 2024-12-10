@@ -77,11 +77,11 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/opt/homebrew/sbin:$PATH"
 
 # openssl
-export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/opt/homebrew/opt/openssl@1.1"
+export PATH="/opt/homebrew/opt/openssl/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/openssl/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl/lib/pkgconfig"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/opt/homebrew/opt/openssl@3.4"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -112,16 +112,12 @@ export PSQL_EDITOR="/opt/homebrew/bin/nvim"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
 
-export RUBY_CFLAGS="-w"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-
-# export PATH="$PYENV_ROOT/shims:$PATH"
-# eval "$(pyenv init -)"
 
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
