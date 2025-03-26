@@ -2,5 +2,6 @@ chromedriver
 font-fira-code
 keepassxc
 kitty
+openvpn-connect
 responsively
 wezterm

@@ -227,4 +227,4 @@ endfunction
 vnoremap <silent><leader>X <Esc>:Ag <C-R>=<SID>getVisualSelection()<CR><CR>
 nnoremap <silent><leader>X :Ag <C-R>=expand("<cword>")<CR><CR>
 
-" let g:localvimrc_whitelist='/Users/emchernyshev/work/.*'
+" let g:localvimrc_whitelist='/Users/evgeniyrru/work/.*'

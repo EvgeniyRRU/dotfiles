@@ -177,13 +177,18 @@ export LC_MESSAGES=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-
-source /Users/emchernyshev/.docker/init-zsh.sh || true # Added by Docker Desktop
-
 export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(starship init zsh)"
 eval "$(thefuck --alias)"
 
-[ -f "/Users/emchernyshev/.ghcup/env" ] && source "/Users/emchernyshev/.ghcup/env" # ghcup-env
+[ -f "/Users/evgeniyrru/.ghcup/env" ] && source "/Users/evgeniyrru/.ghcup/env" # ghcup-env
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/evgeniyrru/.opam/opam-init/init.zsh' ]] || source '/Users/evgeniyrru/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
