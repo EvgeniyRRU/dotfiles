@@ -18,7 +18,6 @@ require("lazy").setup(plugins_spec, lazy_conf)
 
 require('functions')
 require('lsp')
-require('mycmp')
 require('treesitter')
 require('settings')
 require('mappings')
