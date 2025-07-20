@@ -5,9 +5,13 @@ local ls = require('luasnip')
 
 function M.setup()
   ls.config.set_config {
-    history = true,
-    updateevents = "TextChanged,TextChangedI",
-    enable_autosnippets = false,
+    history = false,
+    keep_roots = false,
+    link_roots = false,
+    link_children = false,
+    exit_roots = true,
+    updateevents = { "TextChanged", "TextChangedI" },
+    enable_autosnippets = true,
 
     store_selection_keys = "<Tab>",
 
@@ -55,6 +59,22 @@ function M.setup()
   ls.filetype_extend("javascriptreact", { "javascript" })
   ls.filetype_extend("typescript", { "javascript" })
   ls.filetype_extend("typescriptreact", { "javascript", "javascriptreact", "typescript" })
+
+  -- vim.api.nvim_create_autocmd("ModeChanged", {
+  --   group = vim.api.nvim_create_augroup("luasnip.config", { clear = true }),
+  --   pattern = { "i:n", "s:n" },
+  --   callback = function(e)
+  --     if
+  --       ls.session
+  --       and ls.session.current_nodes[e.buf]
+  --       and not ls.session.jump_active
+  --       and not ls.choice_active()
+  --     then
+  --       ls.active_update_dependents()
+  --       ls.unlink_current()
+  --     end
+  --   end,
+  -- })
 end
 
 return M

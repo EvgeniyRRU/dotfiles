@@ -111,6 +111,7 @@ return {
   { "sainnhe/edge" },
   { "sainnhe/everforest" },
   { "catppuccin/nvim", name = "catppuccin" },
+  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
   {
     "marko-cerovac/material.nvim",
     lazy = false,
@@ -121,6 +122,12 @@ return {
 
       require("material").setup(require("plugins.material"))
     end
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      require("kanagawa").setup(require("plugins.kanagawa")["config"])
+    end,
   },
 
   -- add background colors to colors value
@@ -133,7 +140,9 @@ return {
 
   -- find and replace stuff
   {
-    "nvim-pack/nvim-spectre",
+    -- "nvim-pack/nvim-spectre",
+    dir = "~/Documents/github/nvim-spectre",
+    name = "nvim-spectre",
     config = function()
       require("spectre").setup({
         use_trouble_qf = true
@@ -163,6 +172,9 @@ return {
     cmd = "Trouble",
     keys = require("plugins.trouble")["keys"],
   },
+
+  -- notofications
+  { "rcarriga/nvim-notify" },
 
   -- treesitter
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
@@ -203,8 +215,8 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    opts = require("plugins.whichkey")["opts"],
-    keys = require("plugins.whichkey")["keys"]
+    opts = require("plugins.whichkey")['opts'],
+    keys = require("plugins.whichkey")['keys']
   },
 
   -- folding plugin
