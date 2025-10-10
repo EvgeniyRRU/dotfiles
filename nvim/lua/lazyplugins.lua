@@ -142,9 +142,7 @@ return {
 
   -- find and replace stuff
   {
-    -- "nvim-pack/nvim-spectre",
-    dir = "~/Documents/github/nvim-spectre",
-    name = "nvim-spectre",
+    "nvim-pack/nvim-spectre",
     config = function()
       require("spectre").setup({
         use_trouble_qf = true
