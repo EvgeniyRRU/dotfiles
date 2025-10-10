@@ -140,4 +140,18 @@ return {
       sap_var = f(current_selection)
     })
   ),
+  s({ trig = 'rbd', name = 'Rubocop disable' },
+    fmt([[
+      # rubocop:disable {rule}
+    ]], {
+      rule = i(1)
+    })
+  ),
+  s({ trig = 'rbe', name = 'Rubocop enable' },
+    fmt([[
+      # rubocop:enable {rule}
+    ]], {
+      rule = i(1)
+    })
+  ),
 }

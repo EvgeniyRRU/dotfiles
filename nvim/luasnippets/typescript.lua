@@ -14,7 +14,8 @@ return {
   s({ trig = 'impgg', name = 'import type from generated' },
     fmt("import {{ {} }} from '@generated/graphql';", i(1))
   ),
-  s({ trig = 'jm', name = 'jest.Mock' }, t('as jest.Mock;')),
+  s({ trig = 'jm', name = 'jest.mock' }, t("jest.mock('');")),
+  s({ trig = 'ajm', name = 'jest.Mock' }, t('as jest.Mock;')),
   s({ trig = 'tsi', name = 'ts-ignore' }, t('// @ts-ignore')),
   s({ trig = 'tstry', name = 'try-catch block' },
     fmt([[

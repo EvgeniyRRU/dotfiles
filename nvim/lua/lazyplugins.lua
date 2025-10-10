@@ -85,10 +85,6 @@ return {
   { "phpactor/phpactor", ft = "php" },
 
   -- js and stuff
-  { "pangloss/vim-javascript" },
-  { "leafgarland/typescript-vim" },
-  { "peitalin/vim-jsx-typescript" },
-  { "MaxMEllon/vim-jsx-pretty" },
   { "pantharshit00/vim-prisma" },
   { "posva/vim-vue" },
   { "jparise/vim-graphql" },
@@ -138,6 +134,12 @@ return {
     end
   },
 
+  -- enhanced increment/decrement
+  {
+    "monaqa/dial.nvim",
+    event = "VeryLazy"
+  },
+
   -- find and replace stuff
   {
     -- "nvim-pack/nvim-spectre",
@@ -153,17 +155,6 @@ return {
 
   -- lsp
   { "neovim/nvim-lspconfig" },
-  {
-    "nvimdev/lspsaga.nvim",
-    config = function()
-      require("lspsaga").setup({})
-    end,
-    dependencies = {
-      { "nvim-lspconfig" },
-      { "nvim-tree/nvim-web-devicons", lazy = true },
-      { "nvim-treesitter/nvim-treesitter" }
-    }
-  },
 
   -- extended quickfix
   {
@@ -265,5 +256,17 @@ return {
     config = function()
       require("neotest").setup(require("plugins.neotest")["config"])
     end,
-  }
+  },
+
+  -- llm assistance
+  {
+    "olimorris/codecompanion.nvim",
+    opts = {},
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("codecompanion").setup(require("plugins.codecompanion")["config"])
+    end,
+  },
 }

@@ -22,7 +22,6 @@ elixir
 elm
 erlang
 exercism
-expat
 fd
 ffmpeg
 fftw
@@ -31,6 +30,7 @@ fontconfig
 freetype
 frei0r
 fribidi
+fx
 fzf
 gcc
 gdk-pixbuf
@@ -47,6 +47,7 @@ gnutls
 go
 gpatch
 gpgme
+gpgmepp
 gradle
 graphite2
 harfbuzz
@@ -55,7 +56,6 @@ hdf5
 highway
 hwloc
 hyperfine
-icu4c@76
 icu4c@77
 imagemagick
 imath
@@ -85,7 +85,6 @@ libevent
 libexif
 libgcrypt
 libgit2
-libgit2@1.8
 libgpg-error
 libheif
 libidn
@@ -97,6 +96,8 @@ libmatio
 libmicrohttpd
 libmpc
 libnghttp2
+libnghttp3
+libngtcp2
 libogg
 libomp
 libpng
@@ -114,6 +115,7 @@ libssh2
 libtasn1
 libtiff
 libtool
+libudfread
 libunibreak
 libunistring
 libusb
@@ -122,7 +124,6 @@ libvidstab
 libvmaf
 libvorbis
 libvpx
-libvterm
 libx11
 libxau
 libxcb
@@ -136,6 +137,7 @@ little-cms2
 llvm
 lpeg
 lua
+lua-language-server
 luajit
 luv
 lz4
@@ -150,7 +152,6 @@ mozjpeg
 mpdecimal
 mpfr
 mpg123
-msgpack
 ncurses
 neovim
 netcat
@@ -169,6 +170,7 @@ opencore-amr
 openexr
 openjdk
 openjpeg
+openjph
 openslide
 openssl@3
 opus
@@ -182,10 +184,10 @@ pixman
 pkgconf
 pmix
 poppler
+popt
 postgresql
 postgresql@14
 pyenv
-python-packaging
 python@3.12
 python@3.13
 rav1e
@@ -194,6 +196,7 @@ redis
 rename
 ripgrep
 rlwrap
+rsync
 rubberband
 rust
 rust-analyzer
@@ -201,6 +204,7 @@ rustup
 rustup-init
 sdl2
 shared-mime-info
+simdjson
 snappy
 speex
 sqlite
@@ -220,15 +224,18 @@ universal-ctags
 unixodbc
 utf8proc
 uthash
+uvwasi
 vips
 webp
 wget
 wxwidgets
+wxwidgets@3.2
 x264
 x265
 xmlstarlet
 xorgproto
 xvid
+xxhash
 xz
 z3
 zeromq

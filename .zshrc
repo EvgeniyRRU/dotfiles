@@ -73,6 +73,8 @@ ZSH_THEME="agnoster"
 plugins=(git bundler docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
+# Config for Russian Ortodox cryptography
+export SSL_CERT_DIR="/etc/ssl/certs"
 # Homebrew
 export PATH="/opt/homebrew/sbin:$PATH"
 
@@ -122,7 +124,6 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
-export LDFLAGS="-L/usr/local/opt/readline/lib:$LDFLAGS"
 export CPPFLAGS="-I/usr/local/opt/readline/include:$CPPFLAGS"
 
 alias glt="git describe --abbrev=0"
@@ -192,3 +193,8 @@ eval "$(thefuck --alias)"
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/evgeniyrru/.opam/opam-init/init.zsh' ]] || source '/Users/evgeniyrru/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/evgeniyrru/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
