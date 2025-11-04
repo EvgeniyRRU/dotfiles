@@ -1,7 +1,14 @@
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('my.lsp', {}),
   callback = function(args)
+    -- аналог твоего on_attach
     vim.bo[args.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+    -- тут можно добавить keymaps/настройки под клиент по supports_method()
+    -- пример:
+    -- local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+    -- if client:supports_method('textDocument/hover') then
+    --   vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer = args.buf})
+    -- end
   end,
 })
 

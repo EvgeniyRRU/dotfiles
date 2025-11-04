@@ -100,7 +100,16 @@ return {
    -- appearance
   { "arcticicestudio/nord-vim" },
   { "ayu-theme/ayu-vim" },
-  { "joshdick/onedark.vim" },
+  {
+    "navarasu/onedark.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.o.termguicolors = true
+      require("onedark").setup(require("plugins.onedark")["config"])
+      require("onedark").load()
+    end
+  },
   { "sainnhe/sonokai" },
   { "morhetz/gruvbox" },
   { "folke/tokyonight.nvim" },
@@ -108,17 +117,7 @@ return {
   { "sainnhe/everforest" },
   { "catppuccin/nvim", name = "catppuccin" },
   { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
-  {
-    "marko-cerovac/material.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme material]])
-      vim.g.material_style = "deep ocean"
-
-      require("material").setup(require("plugins.material"))
-    end
-  },
+  { "marko-cerovac/material.nvim" },
   {
     "rebelot/kanagawa.nvim",
     config = function()
@@ -263,8 +262,20 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+    event = "VeryLazy",
     config = function()
       require("codecompanion").setup(require("plugins.codecompanion")["config"])
     end,
   },
+  {
+    "ravitemer/mcphub.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    build = "npm install -g mcp-hub@latest",
+    event = "VeryLazy",
+    config = function()
+      require("mcphub").setup(require("plugins.mcphub")["config"])
+    end
+  }
 }
