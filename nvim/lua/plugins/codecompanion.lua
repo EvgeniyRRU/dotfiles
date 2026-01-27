@@ -1,32 +1,35 @@
+local adapters = require("codecompanion.adapters")
 local M = {}
 
 M.config = {
   adapters = {
-    http = {
-      ollama_remote = function()
-        return require("codecompanion.adapters").extend("openai_compatible", {
-          name = "ollama_remote",
+    acp = {
+      codex = function()
+        return require("codecompanion.adapters").extend("codex", {
+        commands = {
+            default = { "npx", "@zed-industries/codex-acp" },
+          },
+          defaults = {
+            auth_method = "chatgpt", -- "openai-api-key"|"codex-api-key"|"chatgpt"
+          },
           env = {
-            url = "https://awesomellm.com",
-            model = "/model_name",
-            models_endpoint = "/model_path",
+            OPENAI_API_KEY = os.getenv("OPENAI_API_KEY"),
           },
         })
-      end,
-    },
+      end,    },
   },
-  strategies = {
+  interactions = {
     chat = {
-      adapter = "ollama_remote",
+      adapter = "codex"
     },
     inline = {
-      adapter = "ollama_remote",
+      adapter = "codex"
     },
     agent = {
-      adapter = "ollama_remote",
+      adapter = "codex"
     },
     cmd = {
-      adapter = "ollama_remote",
+      adapter = "codex"
     },
   },
   extensions = {
