@@ -34,7 +34,7 @@ return {
   { "majutsushi/tagbar" },
   -- matching parens and more
   { "andymass/vim-matchup" },
-  -- file browser
+  -- bottom line plugin
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { { "nvim-tree/nvim-web-devicons", lazy = true } },
@@ -42,6 +42,7 @@ return {
       require("lualine").setup()
     end
   },
+  -- file browser
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = { { "nvim-tree/nvim-web-devicons", lazy = true } },
@@ -61,7 +62,7 @@ return {
       require("gitsigns").setup(require("plugins.gitsigns"))
     end
   },
-
+  -- diff mode
   { "sindrets/diffview.nvim",
     dependencies = {
       { "nvim-lua/plenary.nvim" },
@@ -191,9 +192,10 @@ return {
 
   -- code formatter
   {
-    "mhartington/formatter.nvim",
+    "stevearc/conform.nvim",
+    event = "VeryLazy",
     config = function()
-      require("formatter").setup(require("plugins.formatter"))
+      require("conform").setup(require("plugins.conform")["setup"])
     end
   },
 
@@ -248,7 +250,8 @@ return {
       "nvim-neotest/neotest-jest",
       "olimorris/neotest-rspec",
       "rouge8/neotest-rust",
-      "mrcjkb/neotest-haskell"
+      "mrcjkb/neotest-haskell",
+      "nvim-neotest/neotest-python",
     },
     config = function()
       require("neotest").setup(require("plugins.neotest")["config"])

@@ -61,9 +61,9 @@ smap <silent><expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' 
 
 vim.g.doge_mapping = '<Leader>j'
 
-vim.cmd([[
-nnoremap gp :silent %!npx prettier --stdin-filepath %<CR>
-]])
+map({ "n", "v" }, "gp", function()
+  require"conform".format({ async = true })
+end)
 
 -- hop-nvim mappings
 map("n", "<leader>hw", function()
