@@ -1,4 +1,10 @@
 return {
+  s({ trig = 'bp', name = 'breakpoint'},
+    t('breakpoint()')
+  ),
+  s({ trig = 'ffia', name = 'from __future__ import annotations'},
+    t('from __future__ import annotations')
+  ),
   s({ trig = 'def', name = 'define function' },
     fmt([[
       def {}():
@@ -23,7 +29,7 @@ return {
       { i(1), i(2) }
     )
   ),
-  s({ trig = 'cdef', name = 'define class method with param' },
+  s({ trig = 'cdefp', name = 'define class method with param' },
     fmt([[
       def {}(self, {}):
           {}
@@ -61,6 +67,34 @@ return {
           {}
       ]],
       { i(1), i(2), i(3) }
+    )
+  ),
+  s({ trig = 'if', name = 'if condition' },
+    fmt([[
+      if {}:
+          {}
+      ]],
+      { i(1), i(2) }
+    )
+  ),
+  s({ trig = 'ifel', name = 'if else condition' },
+    fmt([[
+      if {}:
+          {}
+      else:
+          {}
+      ]],
+      { i(1), i(2), i(3) }
+    )
+  ),
+  s({ trig = 'try', name = 'try except' },
+    fmt([[
+      try:
+          {}
+      except {} as {}:
+          {}
+      ]],
+      { i(1), i(2), i(3, 'exc'), i(4) }
     )
   ),
 }

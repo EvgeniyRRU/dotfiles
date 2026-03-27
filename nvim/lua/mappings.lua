@@ -24,6 +24,8 @@ map('n', 'zM', require('ufo').closeAllFolds)
 map("n", "<Leader>xp", ":call setreg('+', getreg('@'))<CR>", opts)
 -- leader xc -> copy current path + line number to system clipboard
 map("n", "<Leader>xc", ":call setreg('+', expand('%:.') .. ':' .. line('.'))<CR>", opts)
+-- leader xf -> copy current path to system clipboard
+map("n", "<Leader>xf", ":call setreg('+', expand('%:.'))<CR>", opts)
 -- open tmux pane with path of current file:
 map("n", "<leader>tm", ":let $VIM_DIR=expand('%:p:h')<CR>:silent !tmux split-window -hc $VIM_DIR<CR>", nosilent)
 

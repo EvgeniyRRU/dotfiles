@@ -1,3 +1,4 @@
+ada-url
 aom
 aribb24
 autoconf
@@ -7,10 +8,12 @@ bun
 c-ares
 ca-certificates
 cairo
+certifi
 cfitsio
 cgif
 cjson
 clojure
+cookiecutter
 coreutils
 coursier
 ctags
@@ -26,6 +29,7 @@ fd
 ffmpeg
 fftw
 flac
+fmt
 fontconfig
 freetype
 frei0r
@@ -33,10 +37,10 @@ fribidi
 fx
 fzf
 gcc
+gd
 gdk-pixbuf
 gettext
 ghc
-ghostscript
 giflib
 git-flow
 glib
@@ -45,24 +49,27 @@ gnu-sed
 gnupg
 gnutls
 go
-gpatch
 gpgme
 gpgmepp
 gradle
+gradle-completion
 graphite2
+graphviz
+gts
 harfbuzz
 haskell-stack
 hdf5
+hdrhistogram_c
 highway
 hwloc
 hyperfine
 icu4c@77
+icu4c@78
 imagemagick
 imath
 isl
 jansson
 jasper
-jbig2dec
 jpeg-turbo
 jpeg-xl
 jq
@@ -76,8 +83,10 @@ libaec
 libarchive
 libass
 libassuan
+libavif
 libb2
 libbluray
+libdatrie
 libde265
 libdeflate
 libdicom
@@ -87,7 +96,6 @@ libgcrypt
 libgit2
 libgpg-error
 libheif
-libidn
 libidn2
 libimagequant
 libksba
@@ -102,6 +110,7 @@ libogg
 libomp
 libpng
 libpq
+libptytty
 libraw
 librist
 librsvg
@@ -113,9 +122,11 @@ libspng
 libssh
 libssh2
 libtasn1
+libthai
 libtiff
 libtool
 libudfread
+libultrahdr
 libunibreak
 libunistring
 libusb
@@ -134,7 +145,9 @@ libxrender
 libyaml
 libzip
 little-cms2
+llhttp
 llvm
+llvm@21
 lpeg
 lua
 lua-language-server
@@ -144,7 +157,7 @@ lz4
 lzo
 m4
 maven
-mbedtls
+mbedtls@3
 minikube
 mkcert
 mongosh
@@ -155,6 +168,7 @@ mpg123
 ncurses
 neovim
 netcat
+netpbm
 nettle
 node
 node-build
@@ -166,6 +180,7 @@ onefetch
 oniguruma
 opam
 open-mpi
+opencode
 opencore-amr
 openexr
 openjdk
@@ -189,7 +204,8 @@ postgresql
 postgresql@14
 pyenv
 python@3.12
-python@3.13
+python@3.14
+qwen-code
 rav1e
 readline
 redis
@@ -218,6 +234,7 @@ theora
 tldr
 tmux
 tree-sitter
+tree-sitter@0.25
 unbound
 unibilium
 universal-ctags
@@ -228,7 +245,6 @@ uvwasi
 vips
 webp
 wget
-wxwidgets
 wxwidgets@3.2
 x264
 x265
