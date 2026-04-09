@@ -1,0 +1,28 @@
+
+{
+  "security": {
+    "auth": {
+      "selectedType": "openai"
+    }
+  },
+  "modelProviders": {
+    "openai": [
+    ]
+  },
+  "env": {
+  },
+  "mcpServers": {
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp",
+      "headers": {
+        "Accept": "application/json, text/event-stream"
+      }
+    }
+  },
+  "$version": 3,
+  "model": {
+    "name": "z-ai/glm-5.1"
+  }
+}
+
+

@@ -254,6 +254,7 @@ xvid
 xxhash
 xz
 z3
+zellij
 zeromq
 zimg
 zlib
