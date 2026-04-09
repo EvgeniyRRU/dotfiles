@@ -10,8 +10,8 @@ return {
   s({ trig = 'tod', name = 'todo comment' },
     t('# TODO: ')
   ),
-  s({ trig = 'bp', name = 'binding.pry' },
-    t('binding.pry')
+  s({ trig = 'bp', name = 'binding.irb' },
+    t('binding.irb')
   ),
   s({ trig = 'def', name = 'def method' },
     fmt([[

@@ -166,7 +166,14 @@ return {
   { "rcarriga/nvim-notify" },
 
   -- treesitter
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { 
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    lazy = false,
+    config = function()
+      require("nvim-treesitter").setup(require("plugins.treesitter")["setup"])
+    end
+  },
   {
     "windwp/nvim-ts-autotag",
     config = function()
@@ -216,7 +223,7 @@ return {
     config = function()
       require("ufo").setup({
         provider_selector = function(bufnr, filetype, buftype)
-        return {"treesitter", "indent"}
+          return { "treesitter", "indent" }
         end
       })
     end
@@ -233,10 +240,15 @@ return {
   -- searching
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.6",
-    event = "VeryLazy"
+    version = "*",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    },
+    config = function()
+      require("telescope").setup(require("plugins.telescope")["config"])
+    end
   },
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
   -- test runner
   {
