@@ -1,4 +1,5 @@
 HOME = os.getenv("HOME")
+local ts_augroup = vim.api.nvim_create_augroup("treesitter_start", { clear = true })
 
 vim.g.mapleader = ' '
 -- vim.g.maplocalleader = '\\'
@@ -58,12 +59,20 @@ vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decr
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '<filetype>' },
-  callback = function() vim.treesitter.start() end,
+vim.api.nvim_create_autocmd("FileType", {
+  group = ts_augroup,
+  callback = function(args)
+    local ft = vim.bo[args.buf].filetype
+    local lang = vim.treesitter.language.get_lang(ft) or ft
+
+    if not pcall(vim.treesitter.language.add, lang) then
+      return
+    end
+
+    pcall(vim.treesitter.start, args.buf)
+
+    vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    vim.wo[0][0].foldmethod = 'expr'
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
 })
-
-vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.wo[0][0].foldmethod = 'expr'
-
-vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
