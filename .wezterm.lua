@@ -2,7 +2,8 @@ local wezterm = require 'wezterm'
 
 local config = {}
 
-config.color_scheme = 'Ocean Dark (Gogh)'
+-- config.color_scheme = 'Ocean Dark (Gogh)'
+config.color_scheme = 'Kanagawa Dragon (Gogh)'
 config.hide_tab_bar_if_only_one_tab = true
 config.font_size = 11.0
 config.window_padding = {
@@ -11,4 +12,7 @@ config.window_padding = {
   top = 0,
   bottom = 0,
 }
+
+config.default_prog = { '/opt/homebrew/bin/zellij' }
+
 return config
