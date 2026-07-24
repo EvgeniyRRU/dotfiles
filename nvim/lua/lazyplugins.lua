@@ -30,8 +30,6 @@ return {
   { "moll/vim-bbye" },
   -- show labels in sign columns
   { "kshenoy/vim-signature" },
-  -- ctags on right panel
-  { "majutsushi/tagbar" },
   -- matching parens and more
   { "andymass/vim-matchup" },
   -- bottom line plugin
@@ -49,6 +47,17 @@ return {
     config = function()
       require("nvim-tree").setup(require("plugins.nvim-tree"))
     end
+  },
+
+  {
+    "stevearc/aerial.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("aerial").setup(require("plugins.aerial")["setup"])
+    end,
   },
 
   -- git intagration

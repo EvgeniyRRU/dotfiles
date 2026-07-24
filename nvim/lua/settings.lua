@@ -77,6 +77,8 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- You probably also want to set a keymap to toggle aerial
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 vim.filetype.add({
   pattern = {
     [".*_spec%.rb"] = "ruby.rspec"
