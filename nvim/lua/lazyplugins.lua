@@ -211,14 +211,21 @@ return {
     end
   },
 
-  -- generate jsdoc
-  { "kkoomen/vim-doge", build = ":call doge#install()" },
-
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = require("plugins.whichkey")['opts'],
     keys = require("plugins.whichkey")['keys']
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
   },
 
   -- folding plugin
@@ -228,7 +235,7 @@ return {
     config = function()
       require("ufo").setup({
         provider_selector = function(bufnr, filetype, buftype)
-          return { "treesitter", "indent" }
+          return {"treesitter", "indent"}
         end
       })
     end
@@ -254,6 +261,7 @@ return {
       require("telescope").setup(require("plugins.telescope")["config"])
     end
   },
+
 
   -- test runner
   {
@@ -288,8 +296,7 @@ return {
     end,
   },
   {
-    -- "bahaaza/mcphub.nvim",
-    "ravitemer/mcphub.nvim",
+    "bahaaza/mcphub.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
